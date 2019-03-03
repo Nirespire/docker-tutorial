@@ -1,9 +1,19 @@
 version: '3'
 services:
-  redis:
-    image: redis:latest
   mypythonapp:
     build: .
     ports:
       - 8080:8080
-  
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+    environment:
+      - MONGO_HOST=mongo
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  redis:
+    image: redis:latest

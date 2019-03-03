@@ -35,6 +35,7 @@ Navigate to http://localhost:8080
 
 ### Run this Python app with Redis in containers using Docker Compose
 
+`docker-compose build`
 `docker-compose up`
 
 ### Run Graylog with multiple components using Docker Compose
